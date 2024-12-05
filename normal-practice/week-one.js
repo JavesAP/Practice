@@ -42,5 +42,32 @@ function isPalindrome (word) {
   return bool
 }
 
-//console.log('Racecar') --> true
-//console.log('steven') --> false
+//console.log(isPalindrome('Racecar')) --> true
+//console.log(isPalindrome('steven')) --> false
+
+
+// 12-3-24(makeup)
+// Write a function that takes an array of numbers as input 
+// and returns the maximum value
+
+function maxVal(arr) {
+  return arr.toSorted((a, b) => a - b).pop()
+}
+
+// console.log(maxVal([23, 4, 0, 62, -4])) --> 62
+
+
+
+// 12-4-24 
+// Write a function that takes a list of numbers and 
+// returns the sum of all even numbers in the list.
+
+const sumEvens = (numbers) => {
+  return numbers
+  .filter(number => number % 2 === 0)
+  .reduce((acc, val) => {
+    return acc + val
+  }, 0)
+}
+
+// console.log(sumEvens([22, 13, 30, 1, 0])) --> 52
