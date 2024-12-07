@@ -71,3 +71,51 @@ const sumEvens = (numbers) => {
 }
 
 // console.log(sumEvens([22, 13, 30, 1, 0])) --> 52
+
+
+
+// 12-5-24
+// Complete the solution so that it splits the string into 
+// pairs of two characters. If the string contains an odd number of 
+// characters then it should replace the missing second character 
+// of the final pair with an underscore ('_').
+
+// For example:
+
+// 'abc' =>  ['ab', 'c_']
+// 'abcdef' => ['ab', 'cd', 'ef']
+
+function splitStrings(str){   
+  const lettersAlone = str.split('')
+  const lettersArray = [];
+  
+  lettersAlone.forEach((letter, index, array) => {
+    if (index % 2 === 0) {
+      if (array[index + 1]) lettersArray.push(letter.concat(array[index+1]))
+      else lettersArray.push(letter.concat('_'))
+    }
+  })
+  
+  return lettersArray
+}
+
+// console.log(solution('acdsf')) --> ["ac", "ds", "f_"]
+
+
+
+// 12-6-24
+// "Prompt: Write a function that takes a string as input and 
+// returns the number of vowels (a, e, i, o, u) in the string.
+
+function solution (str) {
+  const lowerCase = str.toLowerCase();
+  const vowels = 'aeiou';
+  let totalVowels = 0;
+  
+  for (i = 0; lowerCase.length > i; i++) {
+    if (vowels.includes(lowerCase[i])) totalVowels += 1; 
+  }
+  return totalVowels;
+}
+
+// console.log(solution('animal')) --> 3
